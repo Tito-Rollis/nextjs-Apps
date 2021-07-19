@@ -1,0 +1,32 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap");
+.container {
+	background-color: black;
+
+	font-family: "Montserrat";
+}
+
+.title {
+	color: white;
+	font-weight: 400;
+	letter-spacing: 1px;
+}
+
+.items {
+	color: white !important;
+	list-style: none;
+	font-weight: 400;
+	letter-spacing: 2px;
+}
+
+.items a:hover {
+	transform: scale(1.2);
+	color: #dc3545;
+}
+
+.iconContainer {
+	width: 100%;
+}
+
+.iconContainer li {
+	margin-right: 3%;
+}

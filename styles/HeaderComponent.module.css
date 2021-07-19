@@ -1,0 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap");
+.nav {
+	background-color: black;
+}
+
+.nav h1 {
+	font-size: 1.2em;
+}
+
+.nav a {
+	font-family: "Montserrat";
+	color: white;
+	transition: all 0.3s;
+	letter-spacing: 2px;
+	font-weight: 500;
+}
+
+.nav a:hover {
+	text-decoration: none;
+	color: #dc3545;
+}
+
+.auth {
+	box-sizing: border-box;
+}
+
+@media (min-width: 992px) {
+	.nav a:hover {
+		transform: scale(1.1);
+	}
+}
