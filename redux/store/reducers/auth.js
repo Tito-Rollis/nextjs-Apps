@@ -29,6 +29,18 @@ export default function (state = initialState, action) {
 				token: action.payload,
 			};
 
+		case "FORGOT":
+			return {
+				...state,
+				users: action.payload,
+			};
+
+		case "RESET":
+			return {
+				...state,
+				users: action.payload,
+			};
+
 		default:
 			return state;
 	}

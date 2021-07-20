@@ -1,8 +1,7 @@
 import React, {useEffect, useRef, useState} from "react";
 import Footer from "../../components/FooterComponent";
-import Link from "next/link";
 // REDUX
-import {login} from "../../redux/actions/auth";
+import {forgot, cleanUp} from "../../redux/actions/auth";
 import {useSelector, useDispatch} from "react-redux";
 // Bootstrap
 import {Card, Form} from "react-bootstrap";
@@ -11,13 +10,14 @@ import styles from "../../styles/login.module.css";
 // Route
 import {useRouter} from "next/router";
 
-function Login(props) {
+function Forgot() {
 	const router = useRouter();
 	// ------CREATE STATE
 	const [loadingColor, setLoadingColor] = useState(styles.button);
-	const [loadingText, setLoadingText] = useState("Log In");
+	const [loadingText, setLoadingText] = useState("Submit");
 	const [disabled, setDisabled] = useState("");
 	const [display, setDisplay] = useState(styles.displayNone);
+	const [berhasil, setBerhasil] = useState(styles.displayNone);
 	// -------GET VALUE FROM FORM INPUT
 	const emailRef = useRef();
 	const passRef = useRef();
@@ -25,31 +25,31 @@ function Login(props) {
 	const statusFailed = useSelector((state) => state.auth?.users ?? null);
 	const dispatch = useDispatch();
 
-	const userLogin = (e) => {
+	const userForgot = (e) => {
 		e.preventDefault();
 		// ------LOADING SETTING
 		setLoadingColor(styles.loading);
 		setLoadingText("Loading");
 		setDisabled("disabled");
-		dispatch(login(emailRef.current.value, passRef.current.value));
+		dispatch(forgot(emailRef.current.value));
 	};
 
 	useEffect(() => {
-		// REDIRECT KETIKA BERHASIL LOGIN
+		// CLEANUP STATUS
+		dispatch(cleanUp());
+		// REDIRECT KETIKA BERHASIL
 		if (statusSuccess != null && statusSuccess == 200) {
-			router.push("/profile");
+			router.push("/forgot");
 		}
-		// REDIRECT KETIKA GAGAL LOGIN
+		// REDIRECT KETIKA GAGAL
 		if (statusFailed === 401) {
-			router.push("/login");
+			router.push("/forgot");
 			setDisplay("");
 			setLoadingColor(styles.button);
 			setLoadingText("Log In");
 			setDisabled("");
 		}
 	}, [statusSuccess, statusFailed]);
-
-	console.log(statusSuccess, statusFailed);
 
 	return (
 		<>
@@ -64,30 +64,30 @@ function Login(props) {
 					className={`d-flex justify-content-center`}
 				>
 					<Card.Body className="w-100 text-center">
-						<h1 className="mb-4">Login</h1>
+						<h1 className="mb-4">Forgot Password</h1>
 						<Form>
 							<Form.Group className="mb-4" id="email">
 								<Form.Label>Email</Form.Label>
 								<Form.Control ref={emailRef} type="email"></Form.Control>
 							</Form.Group>
-							<Form.Group className="mb-4" id="password">
-								<Form.Label>Password</Form.Label>
-								<Form.Control ref={passRef} type="password"></Form.Control>
-							</Form.Group>
 							<div className={display}>
 								<p>
-									Email or Password <span style={{fontWeight: 700, color: "rgb(255 193 129)"}}>wrong!</span>
+									No account <span style={{fontWeight: 700, color: "rgb(255 193 129)"}}>with that email address exists!!!</span>
 								</p>
 								<p>Please try again!</p>
 							</div>
 
-							<button onClick={userLogin} className={`${loadingColor} ${disabled} mb-4 btn`} type="submit" value="submit">
+							<div className={berhasil}>
+								<p>
+									email sent, <span style={{fontWeight: 700, color: "rgb(255 193 129)"}}>please cek your email</span>
+								</p>
+								<p>Please try again!</p>
+							</div>
+
+							<button onClick={userForgot} className={`${loadingColor} ${disabled} btn`} type="submit" value="submit">
 								{loadingText}
 							</button>
 						</Form>
-						<Link href="/forgot">
-							<a className="h5 text-white">Forgot Password</a>
-						</Link>
 					</Card.Body>
 				</Card>
 			</div>
@@ -96,4 +96,4 @@ function Login(props) {
 	);
 }
 
-export default Login;
+export default Forgot;
