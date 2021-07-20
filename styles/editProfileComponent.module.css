@@ -1,0 +1,21 @@
+.container {
+    
+    margin: 0 auto;
+  }
+  
+  .mobileCenter {
+    width: 100%;
+  }
+  
+  @media (min-width: 992px) {
+    .container {
+      align-items: left;
+      justify-content: left;
+    }
+  
+    .mobileCenter {
+      width: 50%;
+      text-align: left;
+    }
+  }
+  

@@ -26,7 +26,7 @@ export default function HeaderComponent() {
 						<Link href="/">Home</Link>
 					</Nav.Link>
 					<Nav.Link>
-						<Link href="/game">Games</Link>
+						<Link href="/games">Games</Link>
 					</Nav.Link>
 				</Nav>
 				<Nav className={`${auth} mx-3 align-items-lg-center align-items-lg-center align-items-end`}>

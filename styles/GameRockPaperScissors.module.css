@@ -1,0 +1,29 @@
+.backgroundGame {
+	margin: 0% auto 0% 0%;
+	background-image: url("/assets/images/background-game.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	width: 100%;
+	height:110vh;
+	padding-left: 0px;
+	padding-top: 10px;
+	color: white;
+}
+
+.playAgain{
+	
+}
+
+.backrps {
+	display: flex;
+	align-items: center;
+}
+
+.judulrps {
+	color: #f9b23d;
+	align-items: center;
+}
+
+.imgpaper {
+	height: 10px;
+}
