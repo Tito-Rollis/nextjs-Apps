@@ -20,7 +20,6 @@ function Forgot() {
 	const [berhasil, setBerhasil] = useState(styles.displayNone);
 	// -------GET VALUE FROM FORM INPUT
 	const emailRef = useRef();
-	const passRef = useRef();
 	const statusSuccess = useSelector((state) => state.auth.users?.status ?? null);
 	const statusFailed = useSelector((state) => state.auth?.users ?? null);
 	const dispatch = useDispatch();
@@ -39,7 +38,11 @@ function Forgot() {
 		dispatch(cleanUp());
 		// REDIRECT KETIKA BERHASIL
 		if (statusSuccess != null && statusSuccess == 200) {
+			setBerhasil("");
 			router.push("/forgot");
+			setLoadingColor(styles.button);
+			setLoadingText("Log In");
+			setDisabled("");
 		}
 		// REDIRECT KETIKA GAGAL
 		if (statusFailed === 401) {
@@ -81,7 +84,6 @@ function Forgot() {
 								<p>
 									email sent, <span style={{fontWeight: 700, color: "rgb(255 193 129)"}}>please cek your email</span>
 								</p>
-								<p>Please try again!</p>
 							</div>
 
 							<button onClick={userForgot} className={`${loadingColor} ${disabled} btn`} type="submit" value="submit">
