@@ -10,9 +10,9 @@ import styles from "../../styles/login.module.css";
 // Route
 import {useRouter} from "next/router";
 
-function Reset(props) {
+function Reset() {
 	const router = useRouter();
-	const token = props.match.params.token;
+	const token = router.query.token;
 	// ------CREATE STATE
 	const [loadingColor, setLoadingColor] = useState(styles.button);
 	const [loadingText, setLoadingText] = useState("Submit");
@@ -43,8 +43,8 @@ function Reset(props) {
 		// REDIRECT KETIKA GAGAL
 		if (statusFailed === 401) {
 			router.push({
-				pathname: "/reset/[pid]",
-				query: {pid: token},
+				pathname: "/reset/[token]",
+				query: {token},
 			});
 			setDisplay("");
 			setLoadingColor(styles.button);
@@ -79,14 +79,7 @@ function Reset(props) {
 								<p>Please try again!</p>
 							</div>
 
-							<div className={berhasil}>
-								<p>
-									email sent, <span style={{fontWeight: 700, color: "rgb(255 193 129)"}}>please cek your email</span>
-								</p>
-								<p>Please try again!</p>
-							</div>
-
-							<button onClick={userReset} className={`${loadingColor} ${disabled} btn`} type="submit" value="submit">
+							<button onClick={userReset} className={`${loadingColor} ${disabled} btn mt-4`} type="submit" value="submit">
 								{loadingText}
 							</button>
 						</Form>
