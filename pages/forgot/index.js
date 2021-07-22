@@ -35,7 +35,7 @@ function Forgot() {
 
 	useEffect(() => {
 		// CLEANUP STATUS
-		dispatch(cleanUp());
+		// dispatch(cleanUp());
 		// REDIRECT KETIKA BERHASIL
 		if (statusSuccess != null && statusSuccess == 200) {
 			setBerhasil("");

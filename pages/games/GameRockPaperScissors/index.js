@@ -10,10 +10,8 @@ import {useSelector, useDispatch} from "react-redux";
 const RockPaperScissors = () => {
 	const router = useRouter();
 	const dispatch = useDispatch();
-	const response = useSelector((state) => state.game.response);
 	const room_id = useSelector((state) => state.game.response.data?.data?.room_id);
 	const token = useSelector((state) => state.auth?.token);
-	const score = useSelector((state) => state.game.score);
 
 	// REDIRECT IF NOT AUTHORIZED
 	useEffect(()=>{

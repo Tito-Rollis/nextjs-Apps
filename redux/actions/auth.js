@@ -16,7 +16,7 @@ export const register = (username, email, password) => (dispatch) => {
 			});
 		})
 		.catch((err) => {
-			if (err.response.status === 422) {
+			if (err?.response?.status === 422) {
 				dispatch({
 					type: "REGISTER",
 					payload: err.response.status,

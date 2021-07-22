@@ -37,7 +37,7 @@ function Register() {
 
 	useEffect(() => {
 		// CLEANUP STATUS
-		dispatch(cleanUp());
+		// dispatch(cleanUp());
 		// REDIRECT
 		if (statusSuccess == 201 && statusSuccess != null) {
 			router.push("/login");
