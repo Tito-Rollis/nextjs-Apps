@@ -2,6 +2,7 @@ import React from "react";
 import {Row, Col} from "react-bootstrap";
 import styles from "../styles/FooterComponent.module.css";
 import Link from "next/link";
+import Image from "next/image";
 
 function FooterComponent() {
 	return (
@@ -33,22 +34,22 @@ function FooterComponent() {
 					<h3 className={styles.items}>Social Media</h3>
 					<ul className={`${styles.iconContainer} mt-0 mt-md-3 flex-wrap d-flex justify-content-start px-0`}>
 						<li className="pe-3 py-3 py-md-0">
-							<img src="/assets/icons/fb.png" width="50px" />
+							<Image src="/assets/icons/fb.png" width={50} height={50} alt="sosmed icon" />
 						</li>
 						<li className="pe-3 py-3 py-md-0">
-							<img src="/assets/icons/twit.png" width="50px" />
+							<Image src="/assets/icons/twit.png" width={50} height={50} alt="sosmed icon" />
 						</li>
 						<li className="pe-3 py-3 py-md-0">
-							<img src="/assets/icons/google.png" width="50px" />
+							<Image src="/assets/icons/google.png" width={50} height={50} alt="sosmed icon" />
 						</li>
 						<li className="pe-3 py-3 py-md-0">
-							<img src="/assets/icons/ig.png" width="50px" />
+							<Image src="/assets/icons/ig.png" width={50} height={50} alt="sosmed icon" />
 						</li>
 						<li className="pe-3 py-3 py-md-0">
-							<img src="/assets/icons/in.png" width="50px" />
+							<Image src="/assets/icons/in.png" width={50} height={50} alt="sosmed icon" />
 						</li>
 						<li className="pe-3 py-3 py-md-0">
-							<img src="/assets/icons/github.png" width="50px" />
+							<Image src="/assets/icons/github.png" width={50} height={50} alt="sosmed icon" />
 						</li>
 					</ul>
 				</Col>

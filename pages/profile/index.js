@@ -2,6 +2,7 @@ import React, {useEffect} from "react";
 import {Container, Table} from "react-bootstrap";
 import styles from "../../styles/profileComponent.module.css";
 import Link from "next/link";
+import Image from "next/image";
 
 import {useRouter} from "next/router";
 // REDUX
@@ -29,7 +30,7 @@ export default function Userprofilecomponent() {
 			<h1 className={`${styles.mobileCenter} mt-5`}>Your Profile</h1>
 			<div className="row d-flex">
 				<div className={`${styles.mobileCenter} col-sm-md-lg-6`}>
-					<img className="mx-3" alt="gambar profile" src="https://pbs.twimg.com/media/DhsRKlhUEAAc50O.jpg" />
+					<Image className="mx-3" width={100} alt="gambar profile" src="https://pbs.twimg.com/media/DhsRKlhUEAAc50O.jpg" />
 				</div>
 				<div className={`${styles.mobileCenter} col-sm-md-lg-6`}>
 					<Table responsive borderless className="px-3">

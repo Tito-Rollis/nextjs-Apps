@@ -2,6 +2,7 @@ import React, {useRef, useState, useEffect} from "react";
 import {Container, Button, Row, Col} from "react-bootstrap";
 import styles from "../../styles/editProfileComponent.module.css";
 import Link from "next/link";
+import Image from "next/image";
 // REDUX
 import {updateProfile} from "../../redux/actions/profile";
 import {useSelector, useDispatch} from "react-redux";
@@ -42,7 +43,7 @@ export default function Userprofilecomponent({userData}) {
 					<h1 className={`${styles.mobileCenter} text-center mt-3`}>Your Profile</h1>
 					<div>
 						<div className={`${styles.mobileCenter} col-sm-md-lg-6`}>
-							<img className="mx-3" alt="gambar profile" src="https://pbs.twimg.com/media/DhsRKlhUEAAc50O.jpg" />
+							<Image width={100} className="mx-3" alt="gambar profile" src="https://pbs.twimg.com/media/DhsRKlhUEAAc50O.jpg" />
 						</div>
 					</div>
 				</Col>
