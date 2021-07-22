@@ -25,8 +25,8 @@ const RockPaperScissorsResult = () => {
 				{isNull == null ? (
 					<Container className="d-flex flex-column align-items-center justify-content-center" fluid>
 						<h1 className="text-center">Please create room again!</h1>
-						<Link   href="/games/detail-game">
-							<Button className="w-50 mt-5"   onClick={restartChoice} variant="danger">
+						<Link href="/games/detail-game">
+							<Button className="w-50 mt-5" onClick={restartChoice} variant="danger">
 								Create Room
 							</Button>
 						</Link>
@@ -34,17 +34,16 @@ const RockPaperScissorsResult = () => {
 				) : (
 					<>
 						<Row className="justify-content-start">
-					<Col xs={12} className={`px-2 ${style.backrps} me-2 justify-content-start`}>
-						<Link href="/game">
-							<Button variant="warning">BACK</Button>
-						</Link>
-					</Col>
-					<Col xs={12} className="px-2 py-4 d-flex  justify-content-center">
-						<img src="/assets/images/rps.png" fluid />
-					</Col>
-					
-				</Row>
-						<Row >
+							<Col xs={12} className={`px-2 ${style.backrps} me-2 justify-content-start`}>
+								<Link href="/game">
+									<Button variant="warning">BACK</Button>
+								</Link>
+							</Col>
+							<Col xs={12} className="px-2 py-4 d-flex  justify-content-center">
+								<img src="/assets/images/rps.png" fluid />
+							</Col>
+						</Row>
+						<Row>
 							<Col className="text-center">
 								<h3>Score : {score}</h3>
 							</Col>

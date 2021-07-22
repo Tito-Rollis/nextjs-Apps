@@ -2,25 +2,25 @@ import React, {useEffect} from "react";
 import {Container, Table} from "react-bootstrap";
 import styles from "../../styles/profileComponent.module.css";
 import Link from "next/link";
-import { useRouter } from 'next/router'
+
+import {useRouter} from "next/router";
 // REDUX
 import {getProfile} from "../../redux/actions/profile";
 import {useSelector, useDispatch} from "react-redux";
 
 export default function Userprofilecomponent() {
-    const router = useRouter()
+	const router = useRouter();
 	// GET STORE FROM REDUX
 	const token = useSelector((state) => state.auth?.token);
 	const dataProfile = useSelector((state) => state.profile.profile);
 	const dispatch = useDispatch();
 	console.log(token);
 	useEffect(() => {
-         if (token == null){
-            router.push("/login")
-        };
+		if (token == null) {
+			router.push("/login");
+		}
 		dispatch(getProfile(token));
 	}, []);
-
 
 	console.log(dataProfile);
 

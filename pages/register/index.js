@@ -22,6 +22,7 @@ function Register() {
 	const passRef = useRef();
 	const userRef = useRef();
 	// GET STORE FROM REDUX
+	const token = useSelector((state) => state.auth?.token);
 	const statusSuccess = useSelector((state) => state.auth.users ?? null);
 	const statusFailed = useSelector((state) => state.auth?.users ?? null);
 	const dispatch = useDispatch();
