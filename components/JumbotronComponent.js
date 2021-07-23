@@ -36,7 +36,7 @@ const JumbotronComponent = () => {
 					</p>
 					<p>
 						<Button className="px-4 py-2" variant="danger">
-							<Link href="/game">PLAY NOW</Link>
+							<Link href="/games">PLAY NOW</Link>
 						</Button>
 					</p>
 				</Container>
