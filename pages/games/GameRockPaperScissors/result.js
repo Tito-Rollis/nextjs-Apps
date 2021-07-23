@@ -52,9 +52,9 @@ const RockPaperScissorsResult = () => {
 							<Col className="text-center">
 								<div className="py-4">
 									My Choice: <br /> <br />
-									{myChoice === "r" && <img src="/assets/images/rock.png" height="200" />}
-									{myChoice === "p" && <img src="/assets/images/paper.png" height="200" />}
-									{myChoice === "s" && <img src="/assets/images/scissors.png" height="200" />}
+									{myChoice === "r" && <img className={style.click} src="/assets/images/rock.png" height="200" />}
+									{myChoice === "p" && <img className={style.click} src="/assets/images/paper.png" height="200" />}
+									{myChoice === "s" && <img className={style.click} src="/assets/images/scissors.png" height="200" />}
 								</div>
 							</Col>
 							<Col className="text-center">
