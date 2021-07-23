@@ -10,7 +10,7 @@ import {useSelector, useDispatch} from "react-redux";
 function GameDetail() {
 	// GET STORE FROM REDUX
 	const token = useSelector((state) => state.auth?.token);
-	const data = useSelector((state) => state.game.data.slice(0, 4));
+	const data = useSelector((state) => state.game.data.slice(0, 10));
 	const dispatch = useDispatch();
 
 	// DIDMOUNT
