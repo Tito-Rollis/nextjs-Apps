@@ -35,7 +35,7 @@ const RockPaperScissorsResult = () => {
 					<>
 						<Row className="justify-content-start">
 							<Col xs={12} className={`px-2 ${style.backrps} me-2 justify-content-start`}>
-								<Link href="/game">
+								<Link href="/games">
 									<Button variant="warning">BACK</Button>
 								</Link>
 							</Col>
