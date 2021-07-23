@@ -8,7 +8,7 @@ import {useSelector, useDispatch} from "react-redux";
 
 export default function HeaderComponent() {
 	// GET STORE FROM REDUX
-	const status = useSelector((state) => state.auth.users?.status ?? null);
+	const token = useSelector((state) => state.auth?.token);
 	// REDUX ACTION
 	const dispatch = useDispatch();
 	const userLogout = () => dispatch(logout());
@@ -26,11 +26,11 @@ export default function HeaderComponent() {
 						<Link href="/">Home</Link>
 					</Nav.Link>
 					<Nav.Link>
-						<Link href="/game">Games</Link>
+						<Link href="/games">Games</Link>
 					</Nav.Link>
 				</Nav>
 				<Nav className={`${auth} mx-3 align-items-lg-center align-items-lg-center align-items-end`}>
-					{status == 200 && status != null ? (
+					{token != null ? (
 						<>
 							<Nav.Link>
 								<Link exact href="/profile">

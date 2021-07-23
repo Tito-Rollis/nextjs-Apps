@@ -2,6 +2,8 @@ import CONFIG from "./config";
 
 const API_ENDPOINT = {
 	REGISTER: `${CONFIG.BASE_URL}/register`,
+	FORGOT: `${CONFIG.BASE_URL}/forgot`,
+	RESET: (token) => `${CONFIG.BASE_URL}/reset/${token}`,
 	LOGIN: `${CONFIG.BASE_URL}/login`,
 	PLAY_GAME: (id) => `${CONFIG.BASE_URL}/game/${id}/play`,
 	CREATE_ROOM: (id) => `${CONFIG.BASE_URL}/game/${id}/room`,

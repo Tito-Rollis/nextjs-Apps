@@ -7,6 +7,7 @@ import {useSelector, useDispatch} from "react-redux";
 import {Card, Form} from "react-bootstrap";
 // import CSS
 import styles from "../../styles/register.module.css";
+import Link from "next/link";
 // Route
 import {useRouter} from "next/router";
 
@@ -22,6 +23,7 @@ function Register() {
 	const passRef = useRef();
 	const userRef = useRef();
 	// GET STORE FROM REDUX
+	const token = useSelector((state) => state.auth?.token);
 	const statusSuccess = useSelector((state) => state.auth.users ?? null);
 	const statusFailed = useSelector((state) => state.auth?.users ?? null);
 	const dispatch = useDispatch();
@@ -37,7 +39,7 @@ function Register() {
 
 	useEffect(() => {
 		// CLEANUP STATUS
-		dispatch(cleanUp());
+		// dispatch(cleanUp());
 		// REDIRECT
 		if (statusSuccess == 201 && statusSuccess != null) {
 			router.push("/login");
@@ -90,11 +92,13 @@ function Register() {
 							</div>
 						)}
 
-						<div class="w-100 text-center mt-3">
+						<div className="w-100 text-center mt-3">
 							Already have an account ?
-							<a className={`${styles.login} ms-2`} href="/login">
-								Log In
-							</a>
+							<Link href="/login">
+								<p className={`${styles.login} ms-2`} href="/login">
+									Log In
+								</p>
+							</Link>
 						</div>
 					</Card.Body>
 				</Card>

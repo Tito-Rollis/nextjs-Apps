@@ -16,7 +16,7 @@ export const register = (username, email, password) => (dispatch) => {
 			});
 		})
 		.catch((err) => {
-			if (err.response.status === 422) {
+			if (err?.response?.status === 422) {
 				dispatch({
 					type: "REGISTER",
 					payload: err.response.status,
@@ -59,4 +59,48 @@ export const logout = () => (dispatch) => {
 		type: "LOGOUT",
 		payload: null,
 	});
+};
+
+// FORGOT
+export const forgot = (email) => (dispatch) => {
+	return api
+		.post(API_ENDPOINT.FORGOT, {email})
+		.then((user) => {
+			dispatch({
+				type: "FORGOT",
+				payload: user,
+			});
+		})
+		.catch((err) => {
+			console.log(err);
+
+			if (err.response.status === 422) {
+				dispatch({
+					type: "FORGOT",
+					payload: err.response.status,
+				});
+			}
+		});
+};
+
+// RESET
+export const reset = (token, password) => (dispatch) => {
+	return api
+		.post(API_ENDPOINT.RESET(token), {password})
+		.then((user) => {
+			dispatch({
+				type: "RESET",
+				payload: user,
+			});
+		})
+		.catch((err) => {
+			console.log(err);
+
+			if (err.response.status === 401) {
+				dispatch({
+					type: "RESET",
+					payload: err.response.status,
+				});
+			}
+		});
 };
