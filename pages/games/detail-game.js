@@ -78,7 +78,7 @@ function GameDetail() {
 							</tr>
 						</thead>
 
-						{data.length === 4 &&
+						{data.length === 10 &&
 							data.map((item, index) => {
 								return (
 									<tbody key={index}>

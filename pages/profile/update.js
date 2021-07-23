@@ -50,7 +50,7 @@ export default function Userprofilecomponent({userData}) {
 					<div className={`${styles.mobileCenter} col-sm-md-lg-6`}>
 						<div className="my-4">
 							<label className="form-label">Username</label>
-							<input required ref={userRef} type="text" className="form-control" placeholder={dataProfile.username} />
+							<input required ref={userRef}type="text" className="form-control" placeholder={dataProfile.username} />
 						</div>
 						<div className="mb-3">
 							<label className="form-label">Email address</label>
