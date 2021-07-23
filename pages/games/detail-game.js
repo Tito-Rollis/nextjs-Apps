@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import {Button, Col, Row, Table, Image, Container} from "react-bootstrap";
 import style from "../../styles/gameDetail.module.css";
 // import imgrps from "/assets/images/rps.png";
