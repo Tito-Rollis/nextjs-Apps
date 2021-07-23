@@ -29,7 +29,7 @@ const RockPaperScissors = () => {
 			<Container>
 				<Row className="justify-content-start">
 					<Col xs={12} className={`px-2 ${style.backrps} me-2 justify-content-start`}>
-						<Link href="/games">
+						<Link href="/game">
 							<Button variant="primary">BACK</Button>
 						</Link>
 					</Col>
@@ -48,7 +48,7 @@ const RockPaperScissors = () => {
 				<Row>
 					<Col className="d-flex justify-content-center">
 						<Link href="/games/GameRockPaperScissors/result">
-							<img src="/assets/images/rock.png" height="150" id="r" onClick={setChoice} className="icon icon--rock m-3" alt="imgrock" />
+							<img src="/assets/images/rock.png" height="150" id="r" onClick={setChoice} className={`icon icon--rock m-3 ${style.click}`} alt="imgrock" />
 						</Link>
 					</Col>
 				</Row>
@@ -56,7 +56,7 @@ const RockPaperScissors = () => {
 				<Row>
 					<Col className="d-flex justify-content-center">
 						<Link href="/games/GameRockPaperScissors/result">
-							<img src="/assets/images/paper.png" height="150" id="p" onClick={setChoice} className="m-3 icon icon--paper" alt="imgpaper" />
+							<img src="/assets/images/paper.png " height="150" id="p" onClick={setChoice} className={`m-3 icon icon--paper ${style.click}`} alt="imgpaper" />
 						</Link>
 					</Col>
 				</Row>
@@ -64,7 +64,7 @@ const RockPaperScissors = () => {
 				<Row>
 					<Col className="d-flex justify-content-center">
 						<Link href="/games/GameRockPaperScissors/result">
-							<img src="/assets/images/scissors.png" height="150" id="s" onClick={setChoice} className="m-3 icon icon--scissors" alt="imgscissors" />
+							<img src="/assets/images/scissors.png" height="150" id="s" onClick={setChoice} className={`m-3 icon icon--scissors ${style.click}`} alt="imgscissors" />
 						</Link>
 					</Col>
 				</Row>

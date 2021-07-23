@@ -4,14 +4,19 @@
 	background-size: cover;
 	background-repeat: no-repeat;
 	width: 100%;
-	height:110vh;
+	height: 110vh;
 	padding-left: 0px;
 	padding-top: 10px;
 	color: white;
 }
 
-.playAgain{
-	
+.click {
+	transition: transform 0.5s;
+}
+
+.click:hover {
+	cursor: pointer;
+	transform: scale(1.2);
 }
 
 .backrps {
