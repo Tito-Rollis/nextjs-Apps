@@ -4,7 +4,7 @@ import Footer from "../../components/FooterComponent";
 import {register, cleanUp} from "../../redux/actions/auth";
 import {useSelector, useDispatch} from "react-redux";
 // Bootstrap
-import {Card, Form} from "react-bootstrap";
+import {Card, Form, Button} from "react-bootstrap";
 // import CSS
 import styles from "../../styles/register.module.css";
 import Link from "next/link";
@@ -95,7 +95,7 @@ function Register() {
 						<div className="w-100 text-center mt-3">
 							Already have an account ?
 							<Link href="/login">
-								<p className={`${styles.login} ms-2`} href="/login">
+								<p className={`${styles.login} ms-2 text-warning`} href="/login">
 									Log In
 								</p>
 							</Link>
