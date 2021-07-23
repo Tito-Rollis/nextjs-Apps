@@ -1,5 +1,5 @@
 import React, {useEffect} from "react";
-import {Container, Table} from "react-bootstrap";
+import {Container, Table, Row, Col} from "react-bootstrap";
 import styles from "../../styles/profileComponent.module.css";
 import Link from "next/link";
 import Image from "next/image";
@@ -26,13 +26,13 @@ export default function Userprofilecomponent() {
 	console.log(dataProfile);
 
 	return (
-		<Container className={styles.container}>
+		<Container fluid>
 			<h1 className={`${styles.mobileCenter} mt-5`}>Your Profile</h1>
-			<div className="row d-flex">
-				<div className={`${styles.mobileCenter} col-sm-md-lg-6`}>
-					<Image className="mx-3" width={100} alt="gambar profile" src="https://pbs.twimg.com/media/DhsRKlhUEAAc50O.jpg" />
-				</div>
-				<div className={`${styles.mobileCenter} col-sm-md-lg-6`}>
+			<Row className="flex-wrap justify-content-center">
+				<Col sm={12} md={6} className={`${styles.mobileCenter} text-center `}>
+					<img className="mx-3" alt="gambar profile" src="/assets/images/profile.jpg" />
+				</Col>
+				<Col sm={12} md={6} className={`${styles.mobileCenter} text-center`}>
 					<Table responsive borderless className="px-3">
 						<tbody>
 							<tr>
@@ -59,17 +59,13 @@ export default function Userprofilecomponent() {
 								<td>City</td>
 								<td>{dataProfile.city?.name}</td>
 							</tr>
-							<tr>
-								<td>
-									<Link href="/profile/update" className="" onClick="">
-										<button class="btn btn-outline-info">Update</button>
-									</Link>
-								</td>
-							</tr>
 						</tbody>
 					</Table>
-				</div>
-			</div>
+					<Link href="/profile/update" className="text-center" onClick="">
+						<button className="btn btn-outline-info">Update</button>
+					</Link>
+				</Col>
+			</Row>
 		</Container>
 	);
 }

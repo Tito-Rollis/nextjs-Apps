@@ -1,23 +1,20 @@
 .container {
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto;
+	margin: 0 auto;
 }
 
-.mobileCenter {
-  width: 100%;
-  text-align: center;
-  margin-bottom: 10px;
-}
+/* .mobileCenter {
+	text-align: center;
+	margin-bottom: 10px;
+} */
 
-@media (min-width: 992px) {
-  .container {
-    align-items: left;
-    justify-content: left;
-  }
+/* @media (min-width: 992px) {
+	.container {
+		align-items: left;
+		justify-content: left;
+	}
 
-  .mobileCenter {
-    width: 50%;
-    text-align: left;
-  }
-}
+	.mobileCenter {
+		width: 50%;
+		text-align: left;
+	}
+} */

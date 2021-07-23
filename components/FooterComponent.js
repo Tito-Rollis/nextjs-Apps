@@ -7,7 +7,7 @@ import Image from "next/image";
 function FooterComponent() {
 	return (
 		<div className={`${styles.container} container-fluid py-5`}>
-			<Row class="d-flex flex-wrap justify-content-between py-sm-5 ">
+			<Row className="d-flex flex-wrap justify-content-between py-sm-5 ">
 				<Col className="d-flex justify-content-start " sm={12} md={4}>
 					<p className="h2" style={{color: "white"}}>
 						TEAM <strong style={{fontWeight: "700"}}>FSW 7</strong>

@@ -5,7 +5,7 @@ import Link from "next/link";
 import {login} from "../../redux/actions/auth";
 import {useSelector, useDispatch} from "react-redux";
 // Bootstrap
-import {Card, Form} from "react-bootstrap";
+import {Card, Form, Button} from "react-bootstrap";
 // import CSS
 import styles from "../../styles/login.module.css";
 // Route
@@ -86,7 +86,9 @@ function Login(props) {
 							</button>
 						</Form>
 						<Link href="/forgot">
-							<a className="h5 text-white">Forgot Password</a>
+							<Button variant="warning" className="text-white">
+								Forgot Password
+							</Button>
 						</Link>
 					</Card.Body>
 				</Card>
