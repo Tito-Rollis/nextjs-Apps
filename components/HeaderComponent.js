@@ -1,6 +1,6 @@
 import React from "react";
 import {Navbar, Nav, Button} from "react-bootstrap";
-import Link from "next/Link";
+import Link from "next/link";
 import {nav, auth} from "../styles/HeaderComponent.module.css";
 // REDUX
 import {logout} from "../redux/actions/auth";
