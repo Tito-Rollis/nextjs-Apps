@@ -1,6 +1,6 @@
-import React, {Fragment, useEffect, useState} from "react";
+import React from "react";
 import {Button, Col, Row, Table, Image, Container} from "react-bootstrap";
-import style from "../../styles/GameDetail.module.css"
+import style from "../../styles/gameDetail.module.css";
 // import imgrps from "/assets/images/rps.png";
 import Link from "next/link";
 // REDUX
@@ -8,29 +8,28 @@ import {createRoom, leaderboard} from "../../redux/actions/game";
 import {useSelector, useDispatch} from "react-redux";
 
 function GameDetail() {
-
 	// GET STORE FROM REDUX
 	const token = useSelector((state) => state.auth?.token);
 	const data = useSelector((state) => state.game.data.slice(0, 4));
 	const dispatch = useDispatch();
 
 	// DIDMOUNT
-    // GET LEADERBOARD DATA API
+	// GET LEADERBOARD DATA API
 	useEffect(() => {
 		dispatch(leaderboard(1));
 	}, []);
 
-    // HANDLE FOR CREATE ROOM
+	// HANDLE FOR CREATE ROOM
 	const create_room = (e) => {
 		dispatch(createRoom(1, token));
 	};
 
 	return (
 		<Container fluid>
-			<Row className="justify-content-center my-3" >
+			<Row className="justify-content-center my-3">
 				{token !== null ? (
 					<Link href="/games/GameRockPaperScissors">
-						<Button  className={style.button} onClick={create_room} variant="danger" size="lg">
+						<Button className={style.button} onClick={create_room} variant="danger" size="lg">
 							Create Room
 						</Button>
 					</Link>
@@ -44,7 +43,7 @@ function GameDetail() {
 			</Row>
 			<Row className="mt-5">
 				<Col lg={4}>
-					<Row >
+					<Row>
 						<Col className="d-flex justify-content-md-start justify-content-center">
 							<Image className="mx-3" src="/assets/images/rps.png" style={{width: 150, height: "auto"}} />
 						</Col>
@@ -67,9 +66,9 @@ function GameDetail() {
 					</Row>
 				</Col>
 
-				<Col lg={8}  style={{fontFamily: "Montserrat"}}>
+				<Col lg={8} style={{fontFamily: "Montserrat"}}>
 					<h1 className="text-center">Leader Board</h1>
-					<Table className="mt-4 text-center" striped bordered hover >
+					<Table className="mt-4 text-center" striped bordered hover>
 						<thead>
 							<tr>
 								<th>No</th>
