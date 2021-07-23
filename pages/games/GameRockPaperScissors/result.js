@@ -25,7 +25,7 @@ const RockPaperScissorsResult = () => {
 				{isNull == null ? (
 					<Container className="d-flex flex-column align-items-center justify-content-center" fluid>
 						<h1 className="text-center">Please create room again!</h1>
-						<Link href="/games/detail-game">
+						<Link href="/games/GameRockPaperScissors">
 							<Button className="w-50 mt-5" onClick={restartChoice} variant="danger">
 								Create Room
 							</Button>
